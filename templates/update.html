@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block  head  %}
+<title>Update Employee Detail</title>        
+{% endblock  %}
+
+{% block  body  %}
+<div class="content">
+    <h1> Update Task</h1>
+    
+        <form action="/update/{{emp_detail.id}}" method="POST">
+        <input type="text" name="emp_id" id="emp_id" value="{{emp_detail.emp_id}}">
+        <input type="text" name="name_prefix" id="name_prefix" value="{{emp_detail.name_prefix}}">
+        <input type="text" name="first_name" id="first_name" value="{{emp_detail.first_name}}">
+        <input type="text" name="last_name" id="last_name" value="{{emp_detail.last_name}}">
+        <input type="text" name="gender" id="gender" value="{{emp_detail.gender}}">
+        <input type="text" name="e_mail" id="e_mail" value="{{emp_detail.e_mail}}">
+        <input type="text" name="salary" id="salary" value="{{emp_detail.salary}}">
+        
+        <input type="submit" value="Update">
+        </form>
+  
+</div>
+
+{% endblock  %}
+
+
+        

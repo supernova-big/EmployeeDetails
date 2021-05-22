@@ -1,0 +1,11 @@
+git init
+git add .
+git commit -am 'repo commit'
+heroku login
+heroku create
+heroku rename friends----list
+https://friends----list.herokuapp.com/ 
+git push heroku master
+
+
+

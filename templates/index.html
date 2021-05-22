@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block  head  %}
+<title>Employee Details</title>        
+{% endblock  %}
+
+{% block  body  %}
+<div class="container">
+    <h1> Employee Details</h1>
+    {% if emp_details|length < 1 %}
+    <h4>There are no Employee Details.Create one below!</h4>
+    {% else %}
+    
+    
+    <table>
+        <tr>
+            <th>Sno</th>
+            <th>Emp Id</th>
+            <th>Name Prefix</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Gender</th>
+            <th>Email</th>
+            <th>Salary</th>
+            <th>Added</th>
+            <th>Actions</th>
+        
+            
+        
+
+            
+        </tr>
+        {% for emp_detail in  emp_details %}
+            
+       
+        <tr>
+            <td>{{loop.index}}</td>
+            <td>{{emp_detail.emp_id}}</td>
+            <td>{{emp_detail.name_prefix}}</td>
+            <td>{{emp_detail.first_name}}</td>
+            <td>{{emp_detail.last_name}}</td>
+            <td>{{emp_detail.gender}}</td>
+            <td>{{emp_detail.e_mail}}</td>
+            <td>{{emp_detail.salary}}</td>
+            <td>{{emp_detail.date_created.date()}}</td>
+            
+            <td>
+                <a href="/delete/{{emp_detail.id}}">Delete</a>
+                <br>
+                <a href="/update/{{emp_detail.id}}">Update</a>
+            </td>
+            
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    <div class="form">
+
+        <form action="/" method="POST">
+        <input type="text" name="emp_id" id="emp_id">
+        <input type="text" name="name_prefix" id="name_prefix">
+        <input type="text" name="first_name" id="first_name">
+        <input type="text" name="last_name" id="last_name">
+        <input type="text" name="gender" id="gender">
+        <input type="text" name="e_mail" id="e_mail">
+        <input type="text" name="salary" id="salary">
+            
+        
+        <input type="submit" value="Add Entry">
+        </form>
+  
+</div>
+</div>
+{% endblock  %}
