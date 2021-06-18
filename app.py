@@ -18,7 +18,7 @@ class Emp_details(db.Model):
     date_created=db.Column(db.DateTime,default=datetime.utcnow)
 
     def __repr__(self) -> str:
-        return '<Task %r>' % self.id    
+        return '<Task %r>' % self.date_created  
 
         
 
